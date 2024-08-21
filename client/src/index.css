@@ -1,0 +1,30 @@
+@tailwind base;
+
+@layer base {
+  body {
+    @apply h-screen w-screen;
+  }
+
+  #root {
+    @apply h-full w-full;
+  }
+}
+@tailwind components;
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-semibold;
+  }
+}
+
+@tailwind utilities;
+
+@layer utilities {
+  .nav-link {
+    @apply hover:text-primary;
+  }
+
+  .wrapper {
+    @apply mt-16 px-6 xl:px-16 h-full w-full;
+  }
+}
