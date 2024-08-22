@@ -10,7 +10,7 @@ function App() {
       <NavModal showNavModal={showNavModal} setShowNavModal={setShowNavModal} />
       <Header setShowNavModal={setShowNavModal} />
       <main>
-        <div className="wrapper overflow-hidden">
+        <div className="overflow-hidden">
           <Outlet />
         </div>
       </main>

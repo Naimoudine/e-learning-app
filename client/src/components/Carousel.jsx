@@ -38,7 +38,7 @@ export default function Carousel() {
   }, [xTranslation, width]);
 
   return (
-    <div className="py-8">
+    <div>
       <motion.div
         className="w-fit h-fit left-0 flex"
         ref={ref}

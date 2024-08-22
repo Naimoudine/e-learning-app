@@ -24,7 +24,11 @@
     @apply hover:text-primary;
   }
 
+  .page {
+    @apply mt-16 md:mt-24;
+  }
+
   .wrapper {
-    @apply mt-16 px-6 xl:px-16 h-full w-full;
+    @apply p-6 xl:px-16 h-full w-full;
   }
 }
