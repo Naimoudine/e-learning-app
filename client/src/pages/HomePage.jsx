@@ -1,17 +1,46 @@
+import { useState } from "react";
 import Carousel from "../components/Carousel";
 import Wavy from "../components/Wavy";
+import Tag from "../components/Tag";
+import Partners from "../components/Partners";
+import CourseList from "../components/courses/CourseList";
 
 export default function HomePage() {
+  const [filter, setFilter] = useState("");
+
   return (
     <div className="relative">
-      <Wavy />
-      <h1 className="text-4xl sm:w-4/5 sm:text-6xl xl:text-7xl font-bold md:w-4/5 ">
-        Access a wide range of courses taught by thousands of professionals on
-        various topics.
-      </h1>
-      <div className="mt-16">
+      <div className="wrapper">
+        <Wavy />
+        <h1 className="text-4xl font-bold sm:text-6xl xl:text-7xl md:w-4/5 ">
+          Access a wide range of courses taught by thousands of professionals on
+          various topics.
+        </h1>
+      </div>
+      <div className="mt-8 sm:mt-16 md:mt-24">
         <Carousel />
       </div>
+      <section className="flex flex-col items-center text-white bg-black wrapper">
+        <h2>Discover our courses</h2>
+        <div className="flex flex-wrap items-center justify-center w-full gap-4 mt-16 md:w-3/4">
+          {[
+            "developpement",
+            "business",
+            "marketing",
+            "art",
+            "ux/ui",
+            "design",
+          ].map((tag) => (
+            <Tag key={tag} tag={tag} filter={filter} setFilter={setFilter} />
+          ))}
+        </div>
+        <CourseList />
+      </section>
+      <section className="relative flex flex-col items-center text-black wrapper">
+        <Wavy />
+        <h2>Partners</h2>
+        <Partners />
+      </section>
     </div>
   );
 }

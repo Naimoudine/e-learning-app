@@ -2,18 +2,22 @@
 
 @layer base {
   body {
-    @apply h-screen w-screen;
+    @apply w-screen h-screen;
   }
 
   #root {
-    @apply h-full w-full;
+    @apply w-full h-full;
+  }
+
+  h2 {
+    @apply text-4xl font-bold text-center md:text-5xl;
   }
 }
 @tailwind components;
 
 @layer components {
   .btn {
-    @apply px-4 py-2 rounded-lg font-semibold;
+    @apply px-4 py-2 font-semibold rounded-lg;
   }
 }
 
@@ -24,7 +28,11 @@
     @apply hover:text-primary;
   }
 
+  .page {
+    @apply mt-16 md:mt-24;
+  }
+
   .wrapper {
-    @apply mt-16 px-6 xl:px-16 h-full w-full;
+    @apply w-full h-full px-8 py-16 xl:px-16;
   }
 }
