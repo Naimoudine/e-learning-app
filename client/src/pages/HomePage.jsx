@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Carousel from "../components/Carousel";
 import Wavy from "../components/Wavy";
-import dev from "../assets/images/dev.avif";
 import Tag from "../components/Tag";
+import Partners from "../components/Partners";
+import CourseList from "../components/courses/CourseList";
 
 export default function HomePage() {
   const [filter, setFilter] = useState("");
@@ -33,72 +34,12 @@ export default function HomePage() {
             <Tag key={tag} tag={tag} filter={filter} setFilter={setFilter} />
           ))}
         </div>
-        <div className="flex flex-wrap items-center justify-center w-full gap-8 mt-16">
-          {[
-            {
-              id: 1,
-              title: "Full typescript course for beginners",
-              author: "The bald guy",
-              enrolment: 35,
-              thumbnail: dev,
-            },
-            {
-              id: 2,
-              title: "Full typescript course for beginners",
-              author: "The bald guy",
-              enrolment: 35,
-              thumbnail: dev,
-            },
-            {
-              id: 3,
-              title: "Full typescript course for beginners",
-              author: "The bald guy",
-              enrolment: 35,
-              thumbnail: dev,
-            },
-            {
-              id: 4,
-              title: "Full typescript course for beginners",
-              author: "The bald guy",
-              enrolment: 35,
-              thumbnail: dev,
-            },
-            {
-              id: 5,
-              title: "Full typescript course for beginners",
-              author: "The bald guy",
-              enrolment: 35,
-              thumbnail: dev,
-            },
-            {
-              id: 6,
-              title: "Full typescript course for beginners",
-              author: "The bald guy",
-              enrolment: 35,
-              thumbnail: dev,
-            },
-          ].map((course) => (
-            <article
-              key={course.id}
-              className="flex flex-col overflow-hidden text-black bg-white rounded-lg w-[225px] h-fit"
-            >
-              <div
-                className="w-full h-[8rem]"
-                style={{
-                  background: `url('${course.thumbnail}') center/cover`,
-                }}
-              />
-              <div className="flex flex-col gap-4 px-2 py-4">
-                <h3 className="text-xl font-semibold">{course.title}</h3>
-                <p className="text-sm">{course.author}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <CourseList />
       </section>
       <section className="relative flex flex-col items-center text-black wrapper">
         <Wavy />
         <h2>Partners</h2>
+        <Partners />
       </section>
     </div>
   );
