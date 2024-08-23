@@ -11,12 +11,12 @@ import Card from "./Card";
 
 export default function Carousel() {
   const images = [
-    { image: art, title: "Art" },
-    { image: design, title: "Design" },
-    { image: dev, title: "Dev" },
-    { image: marketing, title: "Marketing" },
-    { image: photography, title: "Photography" },
-    { image: uxui, title: "UX/UI" },
+    { id: 1, image: art, title: "Art" },
+    { id: 2, image: design, title: "Design" },
+    { id: 3, image: dev, title: "Dev" },
+    { id: 4, image: marketing, title: "Marketing" },
+    { id: 5, image: photography, title: "Photography" },
+    { id: 6, image: uxui, title: "UX/UI" },
   ];
 
   const [ref, { width }] = useMeasure();
@@ -45,7 +45,7 @@ export default function Carousel() {
         style={{ x: xTranslation }}
       >
         {[...images, ...images].map((item) => (
-          <Card key={item?.title} item={item} />
+          <Card key={item.id} item={item} />
         ))}
       </motion.div>
     </div>

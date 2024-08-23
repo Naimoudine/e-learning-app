@@ -12,7 +12,8 @@ create table course (
   id int unsigned primary key auto_increment not null,
   title varchar(255) not null,
   description text not null,
-  user_id int unsigned not null,
+  thumbnail varchar(255) not null,
+  user_id int unsigned,
   foreign key(user_id) references user(id),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP()
 );
@@ -36,20 +37,20 @@ create table question (
   text varchar(255),
   quiz_id int unsigned not null,
   foreign key(quiz_id) references lesson(id)
-)
+);
 
 create table answer (
   id int unsigned primary key auto_increment not null,
   text varchar(255),
   question_id int unsigned not null,
   foreign key(question_id) references lesson(id)
-)
+);
 
 create table enrollment (
   id int unsigned primary key auto_increment not null,
   course_id int unsigned not null,
   user_id int unsigned not null,
-  foreign key(course_id) references course(id)
-  foreign key(user_id) references user(id)
+  foreign key(course_id) references course(id),
+  foreign key(user_id) references user(id),
   enrollment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP()
-)
+);

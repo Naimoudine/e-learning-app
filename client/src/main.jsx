@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 import "./index.css";
-import HomePage from "./pages/HomePage";
+import HomePage, { loader as homeLoader } from "./pages/HomePage";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +15,7 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <HomePage />,
+        loader: homeLoader,
       },
     ],
   },
