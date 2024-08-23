@@ -12,6 +12,7 @@ create table course (
   id int unsigned primary key auto_increment not null,
   title varchar(255) not null,
   description text not null,
+  category varchar(255) not null, 
   thumbnail varchar(255) not null,
   user_id int unsigned,
   foreign key(user_id) references user(id),
@@ -54,3 +55,6 @@ create table enrollment (
   foreign key(user_id) references user(id),
   enrollment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP()
 );
+
+
+insert into course (title, description, category, thumbnail) values ('Typescript course for beginners', 'This is essentialy a course about typescript for beginners. We will go around some of the core concepts about typescript and apply them in various projects. Join me to learn how to use ts and be job ready!', 'developpement wb', ' https://res.cloudinary.com/dcogxwg2t/image/upload/v1724356365/e-learning/cjzvcxffrhsrialsaugh.avif');

@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import HomePage, { loader as homeLoader } from "./pages/HomePage";
+import CoursesPage from "./pages/CoursesPage";
+import CoursePage, { loader as courseLoader } from "./pages/CoursePage";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,15 @@ const router = createBrowserRouter([
         path: "",
         element: <HomePage />,
         loader: homeLoader,
+      },
+      {
+        path: "courses",
+        element: <CoursesPage />,
+      },
+      {
+        path: "courses/:id",
+        element: <CoursePage />,
+        loader: courseLoader,
       },
     ],
   },

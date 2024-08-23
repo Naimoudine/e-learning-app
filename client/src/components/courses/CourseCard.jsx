@@ -1,11 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 export default function CourseCard({ course }) {
+  const navigate = useNavigate();
   return (
     <article
+      aria-label="go to course page"
       key={course.id}
-      className="flex flex-col overflow-hidden text-black bg-white rounded-lg w-[225px] h-fit"
+      role="presentation"
+      className="flex flex-col overflow-hidden text-black bg-white rounded-lg w-[225px] h-fit shadow-lg cursor-pointer"
+      onClick={() => navigate(`/courses/${course.id}`)}
     >
       <div
-        className="w-full h-[8rem]"
+        className="w-full h-[8rem] "
         style={{
           background: `url('${course.thumbnail}') center/cover`,
         }}
