@@ -36,7 +36,7 @@ export default function NavModal({ showNavModal, setShowNavModal }) {
           <li>
             <NavLink
               className="nav-link"
-              to="/courses?q=developpement web"
+              to="/courses?q=web development"
               onClick={() => setShowNavModal(false)}
             >
               Developpement Web

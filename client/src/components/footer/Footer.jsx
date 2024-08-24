@@ -7,8 +7,8 @@ function Footer() {
         <ul className="flex flex-col gap-2 py-4 md:py-0">
           <li className="font-semibold">Categories</li>
           <li>
-            <Link className="nav-link" to="/courses?q=developpement web">
-              Developpement Web
+            <Link className="nav-link" to="/courses?q=web development">
+              Web development
             </Link>
           </li>
           <li>

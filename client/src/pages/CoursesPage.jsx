@@ -4,11 +4,10 @@ import CourseList from "../components/courses/CourseList";
 
 export default function CoursesPage() {
   const [courses, setCourses] = useState([]);
-  const [filter, setFilter] = useState("");
   const { search } = useLocation();
+  const filter = search.slice(3).replace(/%20/, " ");
 
   useEffect(() => {
-    setFilter(search.slice(3).replace(/%20/, " "));
     const fetchCourses = async () => {
       try {
         const response = await fetch(

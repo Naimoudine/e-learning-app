@@ -8,7 +8,7 @@ class CourseRepository extends AbstractRepository {
   async readAll(query) {
     if (query) {
       const [rows] = await this.database.query(
-        `select * from ${this.table} where category = %?%`,
+        `select * from ${this.table} where category = ?`,
         [query]
       );
       return rows;

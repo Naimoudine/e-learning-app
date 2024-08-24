@@ -58,7 +58,7 @@ create table enrollment (
 );
 
 
-insert into course (title, description, category, thumbnail) values ('Typescript course for beginners', 'This is essentialy a course about typescript for beginners. We will go around some of the core concepts about typescript and apply them in various projects. Join me to learn how to use ts and be job ready!', 'development web', ' https://res.cloudinary.com/dcogxwg2t/image/upload/v1724356365/e-learning/cjzvcxffrhsrialsaugh.avif');
+insert into course (title, description, category, thumbnail) values ('Typescript course for beginners', 'This is essentialy a course about typescript for beginners. We will go around some of the core concepts about typescript and apply them in various projects. Join me to learn how to use ts and be job ready!', 'web development', ' https://res.cloudinary.com/dcogxwg2t/image/upload/v1724356365/e-learning/cjzvcxffrhsrialsaugh.avif');
 
 INSERT INTO lesson (title, content, course_id) VALUES
 ('Introduction to TypeScript', '{"titre": "The \'any\' Type in TypeScript", "video": "https://youtu.be/wOa67sZyO54?si=dIeVpeGamvHXjfmt", "description": "The \'any\' type in TypeScript allows you to bypass type checking for a variable. A variable of type \'any\' can hold a value of any type, whether it is a number, a string, an array, or even an object. While this can offer flexibility, overusing \'any\' can diminish the benefits of TypeScript\'s static typing. It is generally recommended to avoid \'any\' as much as possible to maintain safe and predictable code.", "exemple_code": "let variable: any = \'Hello\';\\nvariable = 42;\\nvariable = { name: \'TypeScript\' };"}', 1),

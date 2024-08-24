@@ -34,7 +34,7 @@ export default function Navbar({ setShowNavModal }) {
             className="p-1 bg-transparent"
           >
             <option value="">Categories</option>
-            <option value="developpement web">developpement web</option>
+            <option value="web development">web development</option>
             <option value="marketing">marketing</option>
           </select>
         </li>
