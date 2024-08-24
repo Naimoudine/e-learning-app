@@ -1,18 +1,34 @@
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import Wavy from "../components/Wavy";
 import Tag from "../components/Tag";
 import Partners from "../components/Partners";
 import CourseList from "../components/courses/CourseList";
 
+export const loader = async () => {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/courses`);
+    if (!response.ok) {
+      throw new Error("Error while getting courses");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
+
 export default function HomePage() {
   const [filter, setFilter] = useState("");
+
+  const courses = useLoaderData();
 
   return (
     <div className="relative">
       <div className="wrapper">
         <Wavy />
-        <h1 className="text-4xl font-bold sm:text-6xl xl:text-7xl md:w-4/5 ">
+        <h1 className="text-4xl font-bold sm:text-6xl xl:text-7xl md:w-4/5">
           Access a wide range of courses taught by thousands of professionals on
           various topics.
         </h1>
@@ -34,7 +50,7 @@ export default function HomePage() {
             <Tag key={tag} tag={tag} filter={filter} setFilter={setFilter} />
           ))}
         </div>
-        <CourseList />
+        <CourseList courses={courses} />
       </section>
       <section className="relative flex flex-col items-center text-black wrapper">
         <Wavy />

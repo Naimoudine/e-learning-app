@@ -22,32 +22,52 @@ export default function NavModal({ showNavModal, setShowNavModal }) {
           aria-label="close meny"
           onClick={() => setShowNavModal((prev) => !prev)}
         >
-          <XMarkIcon className="size-6 text-zinc-900 absolute top-4 right-3" />
+          <XMarkIcon className="absolute size-6 text-zinc-900 top-4 right-3" />
         </button>
-        <Link to="/" className="font-bold text-xl pb-4">
-          <span className="text-primary font-bold text-2xl">U</span>learning
+        <Link
+          to="/"
+          className="pb-4 text-xl font-bold"
+          onClick={() => setShowNavModal(false)}
+        >
+          <span className="text-2xl font-bold text-primary">U</span>learning
         </Link>
-        <ul className="border-y border-gray-300 py-4 flex flex-col gap-2">
+        <ul className="flex flex-col gap-2 py-4 border-gray-300 border-y">
           <li className="font-semibold">Categories</li>
           <li>
-            <NavLink className="nav-link" to="/course?category">
-              Developpement
+            <NavLink
+              className="nav-link"
+              to="/courses?q=web development"
+              onClick={() => setShowNavModal(false)}
+            >
+              Developpement Web
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav-link" to="/course?category">
-              Business
+            <NavLink
+              className="nav-link"
+              to="/courses?q=marketing"
+              onClick={() => setShowNavModal(false)}
+            >
+              Marketing
             </NavLink>
           </li>
         </ul>
         <ul className="flex flex-col gap-2 pt-4">
           <li>
-            <NavLink className="nav-link" to="/signin">
+            <NavLink
+              className="nav-link"
+              to="/signin"
+              onClick={() => setShowNavModal(false)}
+            >
               Sign In
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav-link" to="/signup">
+            <NavLink
+              className="nav-link"
+              to="/signup"
+              onClick={() => setShowNavModal(false)}
+            >
               Sign Up
             </NavLink>
           </li>
