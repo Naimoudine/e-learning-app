@@ -38,6 +38,14 @@
   }
 
   .wrapper {
-    @apply w-full h-full px-8 py-16 xl:px-16;
+    @apply w-full h-full px-8 py-16 xl:p-24;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2 border-2 rounded-lg border-zinc-800;
+  }
+
+  .form-btn {
+    @apply border-2 btn border-zinc-900 bg-primary hover:bg-primary/70;
   }
 }

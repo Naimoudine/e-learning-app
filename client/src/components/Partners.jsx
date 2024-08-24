@@ -7,7 +7,7 @@ export default function Partners() {
   const brands = [forbes, mit, oxford, slack];
 
   return (
-    <div className="flex flex-wrap justify-center gap-6 mt-12">
+    <div className="flex flex-wrap justify-center gap-6 mt-12 xl:mt-16">
       {brands.map((brand) => (
         <img
           className="w-auto h-20"

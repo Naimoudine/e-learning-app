@@ -8,7 +8,8 @@ import "./index.css";
 import HomePage, { loader as homeLoader } from "./pages/HomePage";
 import CoursesPage from "./pages/CoursesPage";
 import CoursePage, { loader as courseLoader } from "./pages/CoursePage";
-import SignIn from "./pages/SignIn";
+import SignIn, { action as signInAction } from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -30,8 +31,13 @@ const router = createBrowserRouter([
         loader: courseLoader,
       },
       {
-        path: "/signin",
+        path: "signin",
         element: <SignIn />,
+        action: signInAction,
+      },
+      {
+        path: "signup",
+        element: <SignUp />,
       },
     ],
   },
