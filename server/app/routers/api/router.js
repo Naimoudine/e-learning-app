@@ -6,9 +6,14 @@ const router = express.Router();
 // Import And Use Routers Here
 /* ************************************************************************* */
 
-const itemsRouter = require("./items/router");
+// midlewares
 
-router.use("/items", itemsRouter);
+const { hashPassword } = require("../../services/auth");
+
+// signup
+const { add } = require("../../controllers/UserActions");
+
+router.use("/signup", hashPassword, add);
 
 const coursesRouter = require("./courses/router");
 
