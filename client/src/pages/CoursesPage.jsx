@@ -28,9 +28,9 @@ export default function CoursesPage() {
   return (
     <section className="wrapper">
       {filter ? (
-        <h1 className="title">Courses about {filter}</h1>
+        <h1 className="">Courses about {filter}</h1>
       ) : (
-        <h1 className="title">All courses</h1>
+        <h1 className="">All courses</h1>
       )}
       <div>
         {courses.length ? (

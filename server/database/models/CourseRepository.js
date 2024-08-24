@@ -8,7 +8,7 @@ class CourseRepository extends AbstractRepository {
   async readAll(query) {
     if (query) {
       const [rows] = await this.database.query(
-        `select * from ${this.table} where category = ?`,
+        `select * from ${this.table} where category = %?%`,
         [query]
       );
       return rows;
@@ -19,7 +19,22 @@ class CourseRepository extends AbstractRepository {
 
   async read(id) {
     const [rows] = await this.database.query(
-      `select * from ${this.table} where id = ?`,
+      `SELECT
+    c.*,
+    (SELECT JSON_ARRAYAGG(
+        JSON_OBJECT(
+            'id', l.id,
+            'title', l.title,
+            'content', JSON_UNQUOTE(JSON_EXTRACT(l.content, '$'))
+        )
+    )
+    FROM lesson l
+    WHERE l.course_id = c.id) AS lessons
+FROM 
+    course c
+WHERE 
+    c.id = ?;
+`,
       [id]
     );
     return rows[0];

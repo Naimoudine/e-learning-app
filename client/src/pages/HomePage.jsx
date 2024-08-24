@@ -28,7 +28,7 @@ export default function HomePage() {
     <div className="relative">
       <div className="wrapper">
         <Wavy />
-        <h1 className="text-4xl font-bold sm:text-6xl xl:text-7xl md:w-4/5 ">
+        <h1 className="text-4xl font-bold sm:text-6xl xl:text-7xl md:w-4/5">
           Access a wide range of courses taught by thousands of professionals on
           various topics.
         </h1>

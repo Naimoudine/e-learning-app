@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import LessonList from "../components/lessons/LessonList";
 
 export const loader = async ({ params }) => {
   try {
@@ -26,9 +27,12 @@ export default function CoursePage() {
         <p>Author</p>
         <p>rating</p>
       </div>
-      <h1 className="mt-8 title">{course.title}</h1>
+      <h1 className="mt-8">{course.title}</h1>
       <p className="mt-8">{course.description}</p>
-      <div className="mt-8">Lessons</div>
+      <div className="mt-8">
+        <h2>Lessons</h2>
+        <LessonList lessons={course.lessons} />
+      </div>
       <button className="mt-8 btn bg-primary" type="button">
         Enroll
       </button>
