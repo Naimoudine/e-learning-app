@@ -27,7 +27,7 @@ class UserRepository extends AbstractRepository {
   async read(userId) {
     const [rows] = await this.database.query(
       `select * from ${this.table} where id = ?`,
-      [id]
+      [userId]
     );
     return rows[0];
   }
@@ -37,6 +37,7 @@ class UserRepository extends AbstractRepository {
       `select * from ${this.table} where email = ?`,
       [email]
     );
+    return rows[0];
   }
 }
 

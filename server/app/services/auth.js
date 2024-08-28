@@ -11,7 +11,7 @@ const hashPassword = async (req, res, next) => {
   try {
     const hashedPassword = await argon2.hash(req.body.password, hashingOptions);
     delete req.body.password;
-    req.body.hashPassword = hashedPassword;
+    req.body.hashedPassword = hashedPassword;
     next();
   } catch (error) {
     next(error);
