@@ -10,6 +10,7 @@ import CoursesPage from "./pages/CoursesPage";
 import CoursePage, { loader as courseLoader } from "./pages/CoursePage";
 import SignIn, { action as signInAction } from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import Login, { action as loginAction } from "./pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,12 @@ const router = createBrowserRouter([
         path: "signup",
         element: <SignUp />,
         errorElement: <SignUp />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+        errorElement: <Login />,
+        action: loginAction,
       },
     ],
   },
