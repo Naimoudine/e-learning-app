@@ -53,14 +53,14 @@ export default function Navbar({ setShowNavModal }) {
         <button
           className="mr-6 border btn border-zinc-900 hover:bg-gray-200"
           type="button"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/signin")}
         >
           Sign In
         </button>
         <button
           className="text-white btn bg-primary hover:bg-primary/70"
           type="button"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/signup")}
         >
           Sign Up
         </button>

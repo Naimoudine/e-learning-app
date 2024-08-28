@@ -8,6 +8,8 @@ import "./index.css";
 import HomePage, { loader as homeLoader } from "./pages/HomePage";
 import CoursesPage from "./pages/CoursesPage";
 import CoursePage, { loader as courseLoader } from "./pages/CoursePage";
+import SignIn, { action as signInAction } from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,17 @@ const router = createBrowserRouter([
         path: "courses/:id",
         element: <CoursePage />,
         loader: courseLoader,
+      },
+      {
+        path: "signin",
+        element: <SignIn />,
+        action: signInAction,
+        errorElement: <SignIn />,
+      },
+      {
+        path: "signup",
+        element: <SignUp />,
+        errorElement: <SignUp />,
       },
     ],
   },

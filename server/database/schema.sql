@@ -3,7 +3,7 @@ create table user (
   firstname varchar(255) not null, 
   lastname varchar(255) not null, 
   email varchar(255) not null unique,
-  password varchar(255) not null,
+  hashed_password varchar(255) not null,
   role varchar(80) not null,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP()
 );
