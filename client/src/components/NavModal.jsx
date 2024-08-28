@@ -56,6 +56,15 @@ export default function NavModal({ showNavModal, setShowNavModal }) {
           <li>
             <NavLink
               className="nav-link"
+              to="/login"
+              onClick={() => setShowNavModal(false)}
+            >
+              Teach on Ulearnig ?
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="nav-link"
               to="/signin"
               onClick={() => setShowNavModal(false)}
             >

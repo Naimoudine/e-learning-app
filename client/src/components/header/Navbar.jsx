@@ -44,7 +44,7 @@ export default function Navbar({ setShowNavModal }) {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/" className="nav-link">
+          <NavLink to="/login" className="nav-link">
             Teach on Ulearning
           </NavLink>
         </li>
