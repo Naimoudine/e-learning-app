@@ -11,6 +11,8 @@ import CoursePage, { loader as courseLoader } from "./pages/CoursePage";
 import SignIn, { action as signInAction } from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Login, { action as loginAction } from "./pages/Login";
+import { AuthProvider } from "./hooks/useAuth";
+import LessonsPage, { loader as lessonsLoader } from "./pages/LessonsPage";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,11 @@ const router = createBrowserRouter([
         path: "courses/:id",
         element: <CoursePage />,
         loader: courseLoader,
+      },
+      {
+        path: "courses/:courseId/lessons/:lessonId",
+        element: <LessonsPage />,
+        loader: lessonsLoader,
       },
       {
         path: "signin",
@@ -56,6 +63,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

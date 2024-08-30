@@ -31,7 +31,7 @@ export default function CoursePage() {
       <p className="mt-8">{course.description}</p>
       <div className="mt-8">
         <h2>Lessons</h2>
-        <LessonList lessons={course.lessons} />
+        <LessonList lessons={course.lessons} courseId={course.id} />
       </div>
       <button className="mt-8 btn bg-primary" type="button">
         Enroll

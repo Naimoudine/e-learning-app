@@ -1,4 +1,13 @@
-import { Form, Link, useNavigation, useRouteError } from "react-router-dom";
+import { useEffect } from "react";
+import {
+  Form,
+  Link,
+  useActionData,
+  useNavigate,
+  useNavigation,
+  useRouteError,
+} from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
@@ -40,8 +49,19 @@ export const action = async ({ request }) => {
 export default function SignIn() {
   const error = useRouteError();
   const navigation = useNavigation();
+  const navigate = useNavigate();
 
   const isSubmitting = navigation.state === "submitting";
+
+  const user = useActionData();
+  const { setAuth } = useAuth();
+
+  useEffect(() => {
+    if (user) {
+      setAuth(user);
+      navigate("/");
+    }
+  }, []);
 
   return (
     <div className="flex flex-col items-center wrapper">

@@ -11,7 +11,7 @@ function App() {
       <NavModal showNavModal={showNavModal} setShowNavModal={setShowNavModal} />
       <Header setShowNavModal={setShowNavModal} />
       <main className="flex-grow">
-        <div className="overflow-hidden">
+        <div className="h-full overflow-hidden">
           <Outlet />
         </div>
       </main>
