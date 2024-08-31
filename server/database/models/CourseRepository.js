@@ -39,6 +39,14 @@ WHERE
     );
     return rows[0];
   }
+
+  async readAllLessons(courseId) {
+    const [rows] = await this.database.query(
+      `select * from lesson where course_id = ?`,
+      [courseId]
+    );
+    return rows;
+  }
 }
 
 module.exports = CourseRepository;

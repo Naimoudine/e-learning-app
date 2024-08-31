@@ -24,6 +24,10 @@ const coursesRouter = require("./courses/router");
 
 router.use("/courses", coursesRouter);
 
+// lessons
+const lessonsRouter = require("./lessons/router");
+
+router.use("/lessons", lessonsRouter);
 /* ************************************************************************* */
 
 module.exports = router;

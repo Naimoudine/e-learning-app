@@ -14,6 +14,19 @@ const browse = async (req, res, next) => {
   }
 };
 
+const browseLessons = async (req, res, next) => {
+  try {
+    const lessons = await tables.course.readAllLessons(req.params.courseId);
+    if (lessons) {
+      res.json(lessons);
+    } else {
+      throw new Error("error while getting lessons");
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+
 const read = async (req, res, next) => {
   try {
     const course = await tables.course.read(req.params.courseId);
@@ -27,4 +40,4 @@ const read = async (req, res, next) => {
   }
 };
 
-module.exports = { browse, read };
+module.exports = { browse, browseLessons, read };

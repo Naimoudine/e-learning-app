@@ -2,6 +2,7 @@
 const ItemRepository = require("./models/ItemRepository");
 const CourseRepository = require("./models/CourseRepository");
 const UserRepository = require("./models/UserRepository");
+const LessonRepository = require("./models/LessonRepository");
 
 // Create an empty object to hold data repositories for different tables
 const tables = {};
@@ -14,7 +15,7 @@ const tables = {};
 tables.item = new ItemRepository();
 tables.course = new CourseRepository();
 tables.user = new UserRepository();
-
+tables.lesson = new LessonRepository();
 /* ************************************************************************* */
 
 // Use a Proxy to customize error messages when trying to access a non-existing table
